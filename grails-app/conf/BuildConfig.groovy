@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-def springSocialVersion = "1.0.0.RELEASE"
+def springSocialVersion = "1.1.0.RELEASE"
 
 grails.project.class.dir = "target/classes"
 grails.project.test.class.dir = "target/test-classes"
@@ -42,7 +42,7 @@ grails.project.dependency.resolution = {
     compile("org.springframework.social:spring-social-twitter:${springSocialVersion}") { transitive = false }
   }
   plugins {
-    compile(":spring-security-core:1.2.4")
-    compile(":spring-social-core:0.1.31")
+    //compile(":spring-security-core:1.2.4")
+      compile(":spring-social-core:0.2.0.BUILD-SNAPSHOT")
   }
 }
