@@ -51,8 +51,9 @@ class SpringSocialTwitterController {
         tweets = twitter.timelineOperations().getHomeTimeline()
         break
     }
-
-    render view: SpringSocialTwitterUtils.config.twitter.page.timeLine, model: ['timeline': tweets]
+    println id
+    printnln '-----------'
+    render view: SpringSocialTwitterUtils.config.twitter.page.timeLine, model: ['timeline': tweets, 'fun_id': id]
 
   }
 
