@@ -34,8 +34,8 @@ class SpringSocialTwitterGrailsPlugin {
       page.deniedHome = "/springSocialTwitter/login"
     }
     def doWithConfigOptions = {
-      clientId(type: String)
-      clientSecret(type: String)
+      consumerKey(type: String)
+      consumerSecret(type: String)
     }
   }
 
