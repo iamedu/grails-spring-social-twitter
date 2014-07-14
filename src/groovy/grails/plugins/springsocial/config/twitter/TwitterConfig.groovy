@@ -14,7 +14,6 @@
  */
 package grails.plugins.springsocial.config.twitter
 
-import grails.plugins.springsocial.twitter.SpringSocialTwitterUtils
 import javax.inject.Inject
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -27,15 +26,22 @@ import org.springframework.social.twitter.api.impl.TwitterTemplate
 import org.springframework.social.twitter.connect.TwitterConnectionFactory
 import org.springframework.util.Assert
 
+import org.grails.plugin.platform.config.PluginConfiguration
+
 @Configuration
 class TwitterConfig {
   @Inject
   ConnectionRepository connectionRepository
 
+  @Inject
+  PluginConfiguration pluginConfiguration
+
+
   @Bean
   ConnectionFactory twitterConnectionFactory() {
     println "Configuring SpringSocial Twitter"
-    def twitterConfig = SpringSocialTwitterUtils.config.twitter
+    // def twitterConfig = SpringSocialTwitterUtils.config.twitter
+    ConfigObject twitterConfig =  pluginConfiguration.getPluginConfig("springsocialTwitter")
     String consumerKey = twitterConfig.consumerKey ?: ""
     String consumerSecret = twitterConfig.consumerSecret ?: ""
     Assert.hasText(consumerKey, "The Twitter consumerKey is necessary, please add to the Config.groovy as follows: grails.plugins.springsocial.twitter.consumerKey='yourConsumerKey'")
@@ -50,3 +56,4 @@ class TwitterConfig {
     twitter != null ? twitter.getApi() : new TwitterTemplate()
   }
 }
+
