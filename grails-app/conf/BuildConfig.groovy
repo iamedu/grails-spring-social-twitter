@@ -70,3 +70,7 @@ grails.project.dependency.resolution = {
 
   }
 }
+
+
+grails.project.repos.sindicato.url = "http://repo.sindica.to/nexus/content/repositories/snapshots/"
+grails.project.repos.default = "sindicato"
