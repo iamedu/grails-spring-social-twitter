@@ -51,9 +51,8 @@ class SpringSocialTwitterController {
         tweets = twitter.timelineOperations().getHomeTimeline()
         break
     }
-    println id
-    printnln '-----------'
-    render view: SpringSocialTwitterUtils.config.twitter.page.timeLine, model: ['timeline': tweets, 'fun_id': id]
+
+    render view: pluginConfig.page.timeLine, model: ['timeline': tweets]
 
   }
 
@@ -71,7 +70,7 @@ class SpringSocialTwitterController {
         profiles = twitter.friendOperations().getFriends()
         break
     }
-    render view: SpringSocialTwitterUtils.config.twitter.page.profiles, model: ['profiles': profiles]
+    render view: pluginConfig.page.profiles, model: ['profiles': profiles]
   }
 
   def messages = {
@@ -88,12 +87,12 @@ class SpringSocialTwitterController {
         directMessages = twitter.directMessageOperations().getDirectMessagesReceived()
         break
     }
-    render view: SpringSocialTwitterUtils.config.twitter.page.directMessages, model: ['directMessages': directMessages, 'dmListType': dmListType]
+    render view: pluginConfig.page.directMessages, model: ['directMessages': directMessages, 'dmListType': dmListType]
   }
 
   def trends = {
     def trends = twitter.searchOperations().getCurrentTrends()
-    render view: SpringSocialTwitterUtils.config.twitter.page.trends, model: ['trends': trends]
+    render view: pluginConfig.page.trends, model: ['trends': trends]
   }
 
   def tweet = {
@@ -106,11 +105,11 @@ class SpringSocialTwitterController {
     def query = params.query
     def tweets = twitter.searchOperations().search(query).getTweets()
     flash.message = "Search result for '${query}'"
-    render view: SpringSocialTwitterUtils.config.twitter.page.timeLine, model: ['timeline': tweets]
+    render view: pluginConfig.page.timeLine, model: ['timeline': tweets]
   }
 
   def login = {
-    render(view: SpringSocialTwitterUtils.config.twitter.page.connect)
+    render(view: pluginConfig.page.connect)
   }
 
   def auth() {
