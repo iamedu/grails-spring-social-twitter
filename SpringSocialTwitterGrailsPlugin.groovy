@@ -23,7 +23,7 @@ class SpringSocialTwitterGrailsPlugin {
   }
 
   def doWithConfig = { config ->
-    springsocialTwitter {
+    springSocialTwitter {
       page.connect = "/springsocial/twitter/connect"
       page.connectedHome = "/springSocialTwitter/index"
       page.profile = "/springSocialTwitter/index"
