@@ -35,7 +35,7 @@ switch(Environment.current.name.toLowerCase()) {
  * limitations under the License.
  */
 
-def springSocialVersion = "1.1.0.RELEASE"
+def springSocialVersion = "1.1.0.FIX-ENCODING"
 
 grails.project.class.dir = "target/classes"
 grails.project.test.class.dir = "target/test-classes"

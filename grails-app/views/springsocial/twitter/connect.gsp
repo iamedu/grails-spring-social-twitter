@@ -19,6 +19,8 @@
     <p><button type="submit"><img
             src="${createLinkTo(dir: 'images/springsocial/twitter', file: 'connect-with-twitter.png')}"/></button></p>
 
+    <g:hiddenField name="scope" value="publish_stream,offline_access" />
+
 %{--<label for="postTweet"><g:checkBox id="postTweet"
 name="${grailsApplication.config.twitter.postTweetFlag}"/> Post a tweet about connecting with Grails Social Showcase</label>--}%
 </g:form>
