@@ -60,6 +60,7 @@ grails.project.dependency.resolution = {
     mavenRepo "http://maven.springframework.org/snapshot"
     mavenRepo "http://maven.springframework.org/milestone"
     mavenRepo "http://repo.sindica.to/nexus/content/repositories/snapshots"
+    mavenRepo "http://repo.sindica.to/nexus/content/repositories/thirdparty"
   }
   dependencies {
     compile("org.springframework.social:spring-social-twitter:${springSocialVersion}") { transitive = false }
